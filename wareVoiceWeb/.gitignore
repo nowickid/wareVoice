@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/wareVoiceWeb/dist
+/wareVoiceWeb/tmp
+/wareVoiceWeb/out-tsc
+/wareVoiceWeb/bazel-out
+
+# Node
+/wareVoiceWeb/node_modules
+/wareVoiceWebnpm-debug.log
+/wareVoiceWebyarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.wareVoiceWeb/vscode/*
+!.wareVoiceWeb/vscode/settings.json
+!.wareVoiceWeb/vscode/tasks.json
+!.wareVoiceWeb/vscode/launch.json
+!.wareVoiceWeb/vscode/extensions.json
+.wareVoiceWeb/history/*
+
+# Miscellaneous
+/wareVoiceWeb//.angular/cache
+.wareVoiceWeb/sass-cache/
+wareVoiceWeb/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

@@ -26,7 +26,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component'; 
 
 @NgModule({
   declarations: [
@@ -35,11 +36,13 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ItemDetailsComponent,
     AddItemComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'warehouse', component: WarehouseComponent},
+      {path: '', component: MainComponent}
     ]),
     BrowserAnimationsModule,
     MatButtonModule,

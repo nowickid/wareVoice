@@ -40,7 +40,8 @@ export class ItemDetailsComponent {
   })
 
   deliverySubmit() {
-    this.restService.addDetails(<number><unknown>this.deliveryForm.value.count, 
+    this.restService.addDetails(this.data.id, 
+                                <number><unknown>this.deliveryForm.value.count, 
                                 <number><unknown>this.deliveryForm.value.price,
                                 <string>this.deliveryForm.value.date)
     console.log(this.deliveryForm.value);

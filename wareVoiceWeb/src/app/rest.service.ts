@@ -27,12 +27,13 @@ export class RestService {
       }).subscribe()
   }
 
-  addDetails(count: number, price: number, date: string) {
+  addDetails(id: number, count: number, price: number, date: string) {
     this.http.post(this.baseURL + 'add-delivery',
       {
+        "modelId": id,
         "count": count,
         "price": price,
-        "date": date
+        "pucharseDate": date
       }).subscribe()
   }
 }

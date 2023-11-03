@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {Component} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {RestService} from "../../rest.service";
 
 @Component({
   selector: 'app-add-item',
@@ -8,11 +9,14 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 
 export class AddItemComponent {
+  constructor(private restService: RestService) {
+  }
+
   dataForm = new FormGroup({
     model: new FormControl(''),
   })
 
   onSubmit() {
-    console.log(this.dataForm.value);
+    this.restService.addItem(<string>this.dataForm.value.model)
   }
 }

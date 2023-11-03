@@ -27,7 +27,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { MainComponent } from './main/main.component'; 
+import { MainComponent } from './main/main.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,15 +49,16 @@ import { MainComponent } from './main/main.component';
     MatButtonModule,
     MatTableModule,
     MatDialogModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
     MatListModule,
-    MatDatepickerModule, 
+    MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
     MatIconModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'pl-PL'}],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AddItemComponent } from './add-item/add-item.component';
-import {RestService} from "../rest.service";
+import { RestService } from "../rest.service";
 
 @Component({
   selector: 'app-warehouse',
@@ -11,7 +11,7 @@ import {RestService} from "../rest.service";
 })
 
 export class WarehouseComponent {
-  displayedColumns: string[] = ['lp', 'model', 'count', 'details'];
+  displayedColumns: string[] = ['id', 'model', 'count', 'details'];
   dataSource: any;
 
   constructor(public dialog: MatDialog, private restService: RestService) {
@@ -23,9 +23,12 @@ export class WarehouseComponent {
       });
   }
 
-  showDetails() {
-    this.dialog.open(ItemDetailsComponent);
+  showDetails(id: number) {
+    this.dialog.open(ItemDetailsComponent, {
+      data: { id: id }
+    })
   }
+
   add() {
     this.dialog.open(AddItemComponent)
   }
@@ -34,6 +37,6 @@ export class WarehouseComponent {
 
 export interface PeriodicElement {
   model: string;
-  lp: number;
+  id: number;
   count: number;
 }

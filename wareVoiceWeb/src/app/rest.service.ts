@@ -16,10 +16,23 @@ export class RestService {
     return this.http.get(this.baseURL + 'items')
   }
 
+  getDeliveries(id: number):  Observable<any> {
+    return this.http.get(this.baseURL + 'deliveries/'+id)
+  }
+
   addItem(model: string) {
     this.http.post(this.baseURL + 'create-item',
       {
         "model": model
+      }).subscribe()
+  }
+
+  addDetails(count: number, price: number, date: string) {
+    this.http.post(this.baseURL + 'add-delivery',
+      {
+        "count": count,
+        "price": price,
+        "date": date
       }).subscribe()
   }
 }

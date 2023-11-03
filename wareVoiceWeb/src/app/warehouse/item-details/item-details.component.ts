@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { RestService } from "../../rest.service";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-item-details',
@@ -14,7 +15,7 @@ export class ItemDetailsComponent {
   displayedColumns: string[] = ['id', 'count', 'price', 'date'];
   dataSource: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private restService: RestService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private restService: RestService, private datePipe: DatePipe) {
     console.log(this.data.id)
 
     this.restService.getDeliveries(this.data.id).subscribe(
@@ -45,6 +46,13 @@ export class ItemDetailsComponent {
                                 <number><unknown>this.deliveryForm.value.price,
                                 <string>this.deliveryForm.value.date)
     console.log(this.deliveryForm.value);
+  }
+  formatPurchaseDate(dateString: string): string {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = this.datePipe.transform(date, 'fullDate', 'pl-PL');
+  
+    return formattedDate || ''; // Obsługuje wartość null
   }
 }
 

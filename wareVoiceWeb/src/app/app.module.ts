@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from  '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { HttpClientModule } from  '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'pl-PL'}],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'pl-PL'}, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ public interface PersistenceOperationsOutputPort {
     Integer persist(WarehouseItem item);
     WarehouseItem getItemById(Integer id);
     List<WarehouseItem> getAllItems();
-
     Integer persist(Delivery item);
+
+    List<Delivery> getDeliveriesForModel(Integer modelId);
 }

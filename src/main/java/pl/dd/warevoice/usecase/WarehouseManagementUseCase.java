@@ -41,4 +41,9 @@ public class WarehouseManagementUseCase implements WarehouseManagementInputPort 
 
         restPresenter.presentOk(id);
     }
+
+    @Override
+    public void getDeliveriesForModel(Integer modelId) {
+        restPresenter.presentOk(persistenceOps.getDeliveriesForModel(modelId));
+    }
 }

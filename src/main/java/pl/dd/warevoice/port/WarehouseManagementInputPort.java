@@ -10,4 +10,6 @@ public interface WarehouseManagementInputPort {
     void getAllWarehouseItems();
 
     void addDelivery(AddDeliveryRequest addDeliveryRequest);
+
+    void getDeliveriesForModel(Integer modelId);
 }

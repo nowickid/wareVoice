@@ -37,6 +37,15 @@ public class PersistenceGateway implements PersistenceOperationsOutputPort {
         return deliveryRepository.save(mapper.map(item)).getId();
     }
 
+    @Override
+    public List<Delivery> getDeliveriesForModel(Integer modelId) {
+        return deliveryRepository.findAllByWarehouseItemId(modelId)
+                .stream()
+                .map(mapper::map)
+                .collect(Collectors.toList());
+
+    }
+
 
     @Override
     public WarehouseItem getItemById(Integer id) {

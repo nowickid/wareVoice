@@ -34,6 +34,13 @@ public class WarehouseController {
         warehouseManagementUseCase.addDelivery(addDeliveryRequest);
     }
 
+    @GetMapping("/deliveries/{id}")
+    public void deliveries(@PathVariable Integer id){
+        final WarehouseManagementInputPort warehouseManagementUseCase = getUseCase();
+        warehouseManagementUseCase.getDeliveriesForModel(id);
+    }
+
+
     private WarehouseManagementInputPort getUseCase() {
         return appContext.getBean(WarehouseManagementInputPort.class);
     }

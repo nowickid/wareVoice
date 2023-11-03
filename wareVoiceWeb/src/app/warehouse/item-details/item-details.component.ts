@@ -12,13 +12,13 @@ import { RestService } from "../../rest.service";
 })
 export class ItemDetailsComponent {
   displayedColumns: string[] = ['id', 'count', 'price', 'date'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA); 
+  dataSource: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private restService: RestService) { 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private restService: RestService) {
     console.log(this.data.id)
 
     this.restService.getDeliveries(this.data.id).subscribe(
-      (response) => {                           
+      (response) => {
         console.log('response received')
         this.dataSource = response;
       });
@@ -40,8 +40,8 @@ export class ItemDetailsComponent {
   })
 
   deliverySubmit() {
-    this.restService.addDetails(this.data.id, 
-                                <number><unknown>this.deliveryForm.value.count, 
+    this.restService.addDetails(this.data.id,
+                                <number><unknown>this.deliveryForm.value.count,
                                 <number><unknown>this.deliveryForm.value.price,
                                 <string>this.deliveryForm.value.date)
     console.log(this.deliveryForm.value);
@@ -52,12 +52,6 @@ export interface PeriodicElement {
   price: number;
   id: number;
   count: number;
-  date: string;
+  purchaseDate: string;
   editable: boolean;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, price: 429.99, count: 30, date: '01.11.2023', editable: false},
-  {id: 2, price: 129.99, count: 20, date: '02.11.2023', editable: false},
-  {id: 3, price: 229.99, count: 10, date: '03.11.2023', editable: false},
-];

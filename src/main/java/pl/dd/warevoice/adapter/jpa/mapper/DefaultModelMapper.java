@@ -43,6 +43,7 @@ public class DefaultModelMapper implements ModelMapper {
                 .purchaseDate(delivery.getPurchaseDate())
                 .price(delivery.getPrice())
                 .count(delivery.getCount())
+                .warehouseItemId(delivery.getModelId())
                 .build();
     }
 }

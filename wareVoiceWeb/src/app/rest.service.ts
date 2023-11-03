@@ -33,7 +33,7 @@ export class RestService {
         "modelId": id,
         "count": count,
         "price": price,
-        "pucharseDate": date
+        "purchaseDate": date
       }).subscribe()
   }
 }

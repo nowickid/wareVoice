@@ -37,6 +37,7 @@ public class WarehouseManagementUseCase implements WarehouseManagementInputPort 
                 .price(addDeliveryRequest.getPrice())
                 .count(addDeliveryRequest.getCount())
                 .purchaseDate(addDeliveryRequest.getPurchaseDate())
+                .modelId(addDeliveryRequest.getModelId())
                 .build());
 
         restPresenter.presentOk(id);

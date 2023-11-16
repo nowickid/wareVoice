@@ -52,7 +52,7 @@
                     </mat-form-field>
                 </span>
                 <ng-template #displayMode>
-                    {{ element.purchaseDate }}
+                    {{ formatPurchaseDate(element.purchaseDate) }}
                 </ng-template>
                 <button mat-icon-button (click)="toggleEdit(element)">
                     <mat-icon *ngIf="element.editable">save</mat-icon>
@@ -79,7 +79,7 @@
                 <mat-label>Data Zakupu</mat-label>
                 <input matInput [matDatepicker]="picker" placeholder="Dzień/Miesiąc/Rok" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-datepicker #picker></mat-datepicker> 
             </mat-form-field>
         </div>
         <div class="add-container">
